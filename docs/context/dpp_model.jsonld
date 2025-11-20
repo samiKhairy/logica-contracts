@@ -1,0 +1,64 @@
+{
+    "@context": {
+        "dpp": "https://samikhairy.github.io/logica-dpp-vocab/docs/dpp.jsonld#",
+        "identification": "dpp:identification",
+        "dimensions": "dpp:dimensions",
+        "production": "dpp:production",
+        "epcis": "dpp:epcisSection",
+        "maintenance": "dpp:maintenanceSection",
+        "sustainability": "dpp:sustainabilitySection",
+        "supplyChain": "dpp:supplyChainSection",
+        "documentation": "dpp:documentationSection",
+        "epc": "dpp:epc",
+        "gtin": "dpp:gtin",
+        "glnOwner": "dpp:glnOwner",
+        "containerType": "dpp:containerType",
+        "externalLengthM": "dpp:externalLengthM",
+        "externalWidthM": "dpp:externalWidthM",
+        "externalHeightM": "dpp:externalHeightM",
+        "internalVolumeM3": "dpp:internalVolumeM3",
+        "manufacturer": "dpp:manufacturer",
+        "productionDate": "dpp:productionDate",
+        "material": "dpp:material",
+        "events": {
+            "@id": "dpp:events",
+            "@container": "@set"
+        },
+        "maintenanceRecords": {
+            "@id": "dpp:maintenanceRecords",
+            "@container": "@set"
+        },
+        "inspectionRecords": {
+            "@id": "dpp:inspectionRecords",
+            "@container": "@set"
+        },
+        "cumulativeEmissionsGCo2": "dpp:cumulativeEmissionsGCo2",
+        "trips": {
+            "@id": "dpp:trips",
+            "@container": "@set"
+        },
+        "startTime": "dpp:startTime",
+        "endTime": "dpp:endTime",
+        "distanceKm": "dpp:distanceKm",
+        "emissionsGCo2": "dpp:emissionsGCo2",
+        "partners": {
+            "@id": "dpp:partners",
+            "@container": "@set"
+        },
+        "partnerGLN": "dpp:partnerGLN",
+        "role": "dpp:role",
+        "technicalManuals": {
+            "@id": "dpp:technicalManuals",
+            "@container": "@set"
+        },
+        "firmwareHistory": {
+            "@id": "dpp:firmwareHistory",
+            "@container": "@set"
+        },
+        "headline": "dpp:headline",
+        "url": "dpp:url",
+        "version": "dpp:version",
+        "updateDate": "dpp:updateDate",
+        "notes": "dpp:notes"
+    }
+}

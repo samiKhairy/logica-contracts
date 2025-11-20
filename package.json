@@ -1,0 +1,16 @@
+{
+    "name": "@logica/ctd-contracts",
+    "version": "0.1.0",
+    "description": "Shared contracts (schemas, types, paths) for LOGICA CTD + DPP system",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "scripts": {
+        "build": "tsc -p tsconfig.json",
+        "lint": "echo \"no linter configured\"",
+        "test": "echo \"no tests yet\""
+    },
+    "license": "UNLICENSED",
+    "devDependencies": {
+        "typescript": "^5.6.0"
+    }
+}

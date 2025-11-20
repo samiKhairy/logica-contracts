@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://logica/contracts/ctd-alarm.schema.json",
+  "title": "CTD Alarm Message",
+  "type": "object",
+  "additionalProperties": false,
+
+  "required": ["msisdn", "iso6346", "time", "timeSource", "acc", "alarms"],
+
+  "properties": {
+    "msisdn": {
+      "type": "string",
+      "description": "SIM ID of the CTD device"
+    },
+
+    "iso6346": {
+      "type": "string",
+      "description": "Container ID in ISO6346 format"
+    },
+
+    "time": {
+      "type": "string",
+      "description": "Current time UTC/GNSS. Format: DDMMYY hhmmss.s"
+    },
+
+    "timeSource": {
+      "type": "string",
+      "enum": ["GNSS", "NB-IoT", "Local"],
+      "description": "Source of the time synchronisation"
+    },
+
+    "acc": {
+      "type": "string",
+      "description": "Acceleration in mg: 'Gx Gy Gz'"
+    },
+
+    "temperature": {
+      "type": "string",
+      "description": "Temperature in Celsius"
+    },
+
+    "humidity": {
+      "type": "string",
+      "description": "Relative humidity (%)"
+    },
+
+    "pressure": {
+      "type": "string",
+      "description": "Atmospheric pressure in hPa"
+    },
+
+    "alarms": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["alarmSensor", "alarmType"],
+        "properties": {
+          "alarmSensor": {
+            "type": "string",
+            "enum": ["acc", "temperature", "humidity", "pressure", "gyro"],
+            "description": "Sensor that triggered the alarm"
+          },
+
+          "alarmType": {
+            "type": "string",
+            "enum": ["0", "1", "2"],
+            "description": "0=no alarm; 1=above high threshold; 2=below low threshold. For gyro: 1=with RFID seals; 2=without RFID seals."
+          }
+        }
+      }
+    }
+  }
+}

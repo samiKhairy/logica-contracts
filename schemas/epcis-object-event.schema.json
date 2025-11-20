@@ -1,0 +1,150 @@
+
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://logica/contracts/epcis-object-event.schema.json",
+    "title": "EPCIS 2.0 ObjectEvent",
+    "type": "object",
+    "description": "EPCIS ObjectEvent with LOGICA DPP extensions. Fully aligned with Manuale DPP, EPCIS 2.0 JSON-LD, and your live namespace.",
+    "required": [
+        "@context",
+        "type",
+        "epcis:action",
+        "epcis:eventTime",
+        "epcis:eventTimeZoneOffset",
+        "epcis:epcList"
+    ],
+    "properties": {
+        "@context": {
+            "type": [
+                "string",
+                "array"
+            ]
+        },
+        "type": {
+            "type": "string",
+            "const": "ObjectEvent"
+        },
+        "epcis:action": {
+            "type": "string",
+            "enum": [
+                "OBSERVE",
+                "ADD",
+                "DELETE",
+                "TRANSFORM"
+            ]
+        },
+        "epcis:eventTime": {
+            "type": "string"
+        },
+        "epcis:eventTimeZoneOffset": {
+            "type": "string"
+        },
+        "epcis:epcList": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "minItems": 1
+        },
+        "epcis:bizStep": {
+            "type": "string"
+        },
+        "epcis:disposition": {
+            "type": "string"
+        },
+        "epcis:readPoint": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "id"
+            ]
+        },
+        "epcis:bizLocation": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "id"
+            ]
+        },
+        "epcis:extension": {
+            "type": "object",
+            "properties": {
+                "dpp:extension": {
+                    "type": "object",
+                    "properties": {
+                        "dpp:speed": {
+                            "type": "number"
+                        },
+                        "dpp:temperature": {
+                            "type": "number"
+                        },
+                        "dpp:humidity": {
+                            "type": "number"
+                        },
+                        "dpp:pressure": {
+                            "type": "number"
+                        },
+                        "dpp:eseal": {
+                            "type": "string",
+                            "enum": [
+                                "D",
+                                "N"
+                            ]
+                        },
+                        "dpp:eSeals": {
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "required": [
+                                    "seal_status",
+                                    "chip_id",
+                                    "seal_id",
+                                    "seal_date"
+                                ],
+                                "properties": {
+                                    "seal_status": {
+                                        "type": "string",
+                                        "enum": [
+                                            "OPEN",
+                                            "CLOSED",
+                                            "TAMPERED"
+                                        ]
+                                    },
+                                    "chip_id": {
+                                        "type": "string"
+                                    },
+                                    "seal_id": {
+                                        "type": "string"
+                                    },
+                                    "seal_date": {
+                                        "type": "string",
+                                        "pattern": "^[0-9]{14}$"
+                                    }
+                                }
+                            }
+                        },
+                        "dpp:doorStatus": {
+                            "type": "string",
+                            "enum": [
+                                "closed",
+                                "opened",
+                                "unauthorized_open"
+                            ]
+                        }
+                    },
+                    "additionalProperties": true
+                }
+            },
+            "additionalProperties": false
+        }
+    },
+    "additionalProperties": false
+}

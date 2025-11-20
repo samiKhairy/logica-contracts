@@ -1,0 +1,276 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://logica/contracts/dpp-model.schema.json",
+    "title": "Digital Product Passport - Dry Container",
+    "type": "object",
+    "description": "JSON Schema for the Dry Container Digital Product Passport. Generated strictly from the Manuale DPP (English). NOTE: GS1 CBV restrictions for bizStep, disposition, EPC URN patterns, GTIN/GLN formats will be applied in a later hardening phase.",
+    "required": [
+        "@context",
+        "@id",
+        "identification"
+    ],
+    "properties": {
+        "@context": {
+            "type": [
+                "string",
+                "array"
+            ]
+        },
+        "@id": {
+            "type": "string",
+            "description": "EPC URN of the container (urn:epc:id:container:<ISO6346>)"
+        },
+        "identification": {
+            "type": "object",
+            "required": [
+                "epc",
+                "type"
+            ],
+            "properties": {
+                "epc": {
+                    "type": "string"
+                },
+                "type": {
+                    "const": "dpp:DryContainerPassport"
+                },
+                "gtin": {
+                    "type": "string"
+                },
+                "glnOwner": {
+                    "type": "string"
+                }
+            }
+        },
+        "dimensions": {
+            "type": "object",
+            "properties": {
+                "containerType": {
+                    "type": "string"
+                },
+                "externalLengthM": {
+                    "type": "number"
+                },
+                "externalWidthM": {
+                    "type": "number"
+                },
+                "externalHeightM": {
+                    "type": "number"
+                },
+                "internalVolumeM3": {
+                    "type": "number"
+                }
+            }
+        },
+        "production": {
+            "type": "object",
+            "properties": {
+                "manufacturer": {
+                    "type": "object",
+                    "required": [
+                        "name"
+                    ],
+                    "properties": {
+                        "name": {
+                            "type": "string"
+                        },
+                        "street": {
+                            "type": "string"
+                        },
+                        "city": {
+                            "type": "string"
+                        },
+                        "stateOrRegion": {
+                            "type": "string"
+                        },
+                        "country": {
+                            "type": "string"
+                        }
+                    }
+                },
+                "productionDate": {
+                    "type": "string"
+                },
+                "material": {
+                    "type": "string"
+                }
+            }
+        },
+        "epcis": {
+            "type": "object",
+            "properties": {
+                "events": {
+                    "type": "array"
+                }
+            }
+        },
+        "maintenance": {
+            "type": "object",
+            "properties": {
+                "maintenanceRecords": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "required": [
+                            "maintenanceDate",
+                            "maintenanceType"
+                        ],
+                        "properties": {
+                            "maintenanceDate": {
+                                "type": "string"
+                            },
+                            "maintenanceType": {
+                                "type": "string"
+                            },
+                            "description": {
+                                "type": "string"
+                            },
+                            "partsReplaced": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                },
+                "inspectionRecords": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "required": [
+                            "inspectionDate"
+                        ],
+                        "properties": {
+                            "inspectionDate": {
+                                "type": "string"
+                            },
+                            "inspector": {
+                                "type": "string"
+                            },
+                            "outcome": {
+                                "type": "string"
+                            },
+                            "certificateID": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "sustainability": {
+            "type": "object",
+            "properties": {
+                "cumulativeEmissionsGCo2": {
+                    "type": "number"
+                },
+                "trips": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "required": [
+                            "startTime",
+                            "endTime"
+                        ],
+                        "properties": {
+                            "startTime": {
+                                "type": "string"
+                            },
+                            "endTime": {
+                                "type": "string"
+                            },
+                            "distanceKm": {
+                                "type": "number"
+                            },
+                            "emissionsGCo2": {
+                                "type": "number"
+                            }
+                        }
+                    }
+                },
+                "recyclablePercentage": {
+                    "type": "number"
+                },
+                "recyclingMethods": {
+                    "type": "string"
+                },
+                "reusePotential": {
+                    "type": "string"
+                }
+            }
+        },
+        "supplyChain": {
+            "type": "object",
+            "properties": {
+                "partners": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "required": [
+                            "partnerGLN",
+                            "role"
+                        ],
+                        "properties": {
+                            "partnerGLN": {
+                                "type": "string"
+                            },
+                            "role": {
+                                "type": "string"
+                            },
+                            "startTime": {
+                                "type": "string"
+                            },
+                            "endTime": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "documentation": {
+            "type": "object",
+            "properties": {
+                "technicalManuals": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "required": [
+                            "headline",
+                            "url"
+                        ],
+                        "properties": {
+                            "headline": {
+                                "type": "string"
+                            },
+                            "url": {
+                                "type": "string"
+                            },
+                            "version": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                },
+                "firmwareHistory": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "required": [
+                            "version",
+                            "updateDate"
+                        ],
+                        "properties": {
+                            "version": {
+                                "type": "string"
+                            },
+                            "updateDate": {
+                                "type": "string"
+                            },
+                            "notes": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

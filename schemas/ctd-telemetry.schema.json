@@ -1,0 +1,118 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://logica/contracts/ctd-telemetry.schema.json",
+    "title": "CTD Telemetry Message",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+        "msisdn",
+        "iso6346",
+        "time",
+        "rssi",
+        "cgi",
+        "ble-m",
+        "bat-soc",
+        "acc",
+        "temperature",
+        "humidity",
+        "pressure",
+        "door",
+        "gnss"
+    ],
+    "properties": {
+        "msisdn": {
+            "type": "string",
+            "description": "SIM ID of the CTD device"
+        },
+        "iso6346": {
+            "type": "string",
+            "description": "Container ID in ISO6346 format"
+        },
+        "time": {
+            "type": "string",
+            "description": "UTC time. Format: DDMMYY hhmmss.s (e.g., '200423 002940.0')"
+        },
+        "rssi": {
+            "type": "string",
+            "description": "Received Signal Strength Indication from NB-IoT base station"
+        },
+        "cgi": {
+            "type": "string",
+            "description": "Cell Global Identity (MCC-MNC-eNBID-CI)"
+        },
+        "ble-m": {
+            "type": "string",
+            "enum": [
+                "0",
+                "1"
+            ],
+            "description": "BLE mesh indicator: 0=no BLE source, 1=BLE source"
+        },
+        "bat-soc": {
+            "type": "string",
+            "description": "Battery State of Charge (%)"
+        },
+        "acc": {
+            "type": "string",
+            "description": "Acceleration in mg: 'Gx Gy Gz' (e.g., '-993.9269 -27.1004 -52.0035')"
+        },
+        "temperature": {
+            "type": "string",
+            "description": "Temperature in Celsius"
+        },
+        "humidity": {
+            "type": "string",
+            "description": "Relative humidity in %RH"
+        },
+        "pressure": {
+            "type": "string",
+            "description": "Atmospheric pressure in hPa"
+        },
+        "door": {
+            "type": "string",
+            "enum": [
+                "D",
+                "O",
+                "C",
+                "T"
+            ],
+            "description": "Door state: D=Not Detected, O=Open, C=Closed, T=Tampered"
+        },
+        "gnss": {
+            "type": "string",
+            "enum": [
+                "0",
+                "1"
+            ],
+            "description": "GNSS fix: 0=no fix, 1=valid fix"
+        },
+        "latitude": {
+            "type": "string",
+            "description": "Latitude in decimal degrees"
+        },
+        "longitude": {
+            "type": "string",
+            "description": "Longitude in decimal degrees"
+        },
+        "altitude": {
+            "type": "string",
+            "description": "Altitude in meters"
+        },
+        "speed": {
+            "type": "string",
+            "description": "Speed in m/s"
+        },
+        "heading": {
+            "type": "string",
+            "description": "Heading in degrees"
+        },
+        "nsat": {
+            "type": "string",
+            "description": "Number of satellites used"
+        },
+        "hdop": {
+            "type": "string",
+            "description": "Horizontal Dilution of Precision (0.5–99.9)"
+        }
+    }
+}

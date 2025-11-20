@@ -1,0 +1,49 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://logica/contracts/ctd-eseal.schema.json",
+    "title": "CTD E-Seal Status Message",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+        "e-seals"
+    ],
+    "properties": {
+        "e-seals": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                    "seal_status",
+                    "chip_id",
+                    "seal_id",
+                    "seal_date"
+                ],
+                "properties": {
+                    "seal_status": {
+                        "type": "string",
+                        "enum": [
+                            "OPEN",
+                            "CLOSED",
+                            "TAMPERED"
+                        ],
+                        "description": "Seal status using CCL nomenclature (OPEN/CLOSED/TAMPERED)"
+                    },
+                    "chip_id": {
+                        "type": "string",
+                        "description": "UHF RFID seal chip TID (ISO 7352). Max 12 bytes."
+                    },
+                    "seal_id": {
+                        "type": "string",
+                        "description": "UHF RFID seal EPC identifier (ISO 7352). Max 16 bytes."
+                    },
+                    "seal_date": {
+                        "type": "string",
+                        "description": "Timestamp written to seal during closing. Format: YYYYMMDDHHMMSS"
+                    }
+                }
+            }
+        }
+    }
+}
