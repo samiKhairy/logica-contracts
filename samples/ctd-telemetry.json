@@ -1,0 +1,22 @@
+{
+    "msisdn": "393351234567",
+    "iso6346": "MSCU1234567",
+    "time": "140124 103015.0",
+    "rssi": "-73",
+    "cgi": "222-10-12345-12",
+    "ble-m": "1",
+    "bat-soc": "83",
+    "acc": "12 -3 981",
+    "temperature": "24.5",
+    "humidity": "55.2",
+    "pressure": "1013.2",
+    "door": "C",
+    "gnss": "1",
+    "latitude": "43.712345",
+    "longitude": "10.412345",
+    "altitude": "12.3",
+    "speed": "1.52",
+    "heading": "87",
+    "nsat": "10",
+    "hdop": "0.9"
+}

@@ -1,0 +1,87 @@
+{
+    "@context": [
+        "https://samikhairy.github.io/logica-dpp-vocab/dpp_model.jsonld"
+    ],
+    "@id": "urn:epc:id:container:MSCU1234567",
+    "identification": {
+        "epc": "urn:epc:id:container:MSCU1234567",
+        "type": "dpp:DryContainerPassport",
+        "gtin": "01234567890123",
+        "glnOwner": "1234567000002"
+    },
+    "dimensions": {
+        "containerType": "dry",
+        "externalLengthM": 6.06,
+        "externalWidthM": 2.44,
+        "externalHeightM": 2.59,
+        "internalVolumeM3": 33.0
+    },
+    "production": {
+        "manufacturer": {
+            "name": "Maersk Container Industry",
+            "country": "DK"
+        },
+        "productionDate": "2020-07-12",
+        "material": "Corten steel"
+    },
+    "epcis": {
+        "events": []
+    },
+    "maintenance": {
+        "maintenanceRecords": [
+            {
+                "maintenanceDate": "2023-11-01",
+                "maintenanceType": "preventive",
+                "description": "Routine structural inspection"
+            }
+        ],
+        "inspectionRecords": [
+            {
+                "inspectionDate": "2023-10-12",
+                "inspector": "Inspector S.K.",
+                "outcome": "PASSED",
+                "certificateID": "CERT998877"
+            }
+        ]
+    },
+    "sustainability": {
+        "cumulativeEmissionsGCo2": 230000,
+        "trips": [
+            {
+                "startTime": "2023-09-01T12:00:00Z",
+                "endTime": "2023-09-15T12:00:00Z",
+                "distanceKm": 12000,
+                "emissionsGCo2": 45000
+            }
+        ],
+        "recyclablePercentage": 92,
+        "recyclingMethods": "metal recovery",
+        "reusePotential": "high"
+    },
+    "supplyChain": {
+        "partners": [
+            {
+                "partnerGLN": "1234567000009",
+                "role": "Shipping Line",
+                "startTime": "2023-09-01T12:00:00Z",
+                "endTime": "2023-09-15T12:00:00Z"
+            }
+        ]
+    },
+    "documentation": {
+        "technicalManuals": [
+            {
+                "headline": "Container Technical Specification",
+                "url": "https://example.org/manuals/container-spec-v1.pdf",
+                "version": "1.0"
+            }
+        ],
+        "firmwareHistory": [
+            {
+                "version": "1.2.0",
+                "updateDate": "2023-05-18",
+                "notes": "Improved GNSS filtering"
+            }
+        ]
+    }
+}   

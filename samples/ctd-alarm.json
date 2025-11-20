@@ -1,0 +1,20 @@
+{
+    "msisdn": "393351234567",
+    "iso6346": "MSCU1234567",
+    "time": "140124 103020.0",
+    "timeSource": "GNSS",
+    "acc": "200 150 1200",
+    "temperature": "35.2",
+    "humidity": "78.1",
+    "pressure": "1001.3",
+    "alarms": [
+        {
+            "alarmSensor": "acc",
+            "alarmType": "1"
+        },
+        {
+            "alarmSensor": "temperature",
+            "alarmType": "2"
+        }
+    ]
+}

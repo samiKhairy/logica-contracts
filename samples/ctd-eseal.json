@@ -1,0 +1,16 @@
+{
+    "e-seals": [
+        {
+            "seal_status": "CLOSED",
+            "chip_id": "ESEALCHIP998877",
+            "seal_id": "SEAL123456",
+            "seal_date": "20240114103015"
+        },
+        {
+            "seal_status": "TAMPERED",
+            "chip_id": "ESEALCHIP112233",
+            "seal_id": "SEAL987654",
+            "seal_date": "20240114094522"
+        }
+    ]
+}

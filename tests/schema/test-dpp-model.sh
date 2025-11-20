@@ -1,0 +1,1 @@
+npx ajv validate --spec=draft2020 --allowUnionTypes -s schemas/dpp-model.schema.json -d samples/dpp.json

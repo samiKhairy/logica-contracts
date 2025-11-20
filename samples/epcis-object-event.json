@@ -1,0 +1,39 @@
+{
+    "@context": [
+        "https://ref.gs1.org/epcis",
+        "https://samikhairy.github.io/logica-dpp-vocab/dpp_model.jsonld"
+    ],
+    "type": "ObjectEvent",
+    "epcis:action": "OBSERVE",
+    "epcis:eventTime": "2024-01-14T10:30:15Z",
+    "epcis:eventTimeZoneOffset": "+00:00",
+    "epcis:epcList": [
+        "urn:epc:id:container:MSCU1234567"
+    ],
+    "epcis:bizStep": "urn:epcglobal:cbv:bizstep:shipping",
+    "epcis:disposition": "urn:epcglobal:cbv:disp:in_transit",
+    "epcis:readPoint": {
+        "id": "urn:epc:id:sgln:1234567.00001.0"
+    },
+    "epcis:bizLocation": {
+        "id": "urn:epc:id:sgln:1234567.00002.0"
+    },
+    "epcis:extension": {
+        "dpp:extension": {
+            "dpp:temperature": 24.5,
+            "dpp:humidity": 55.2,
+            "dpp:pressure": 1013.2,
+            "dpp:speed": 1.52,
+            "dpp:eseal": "D",
+            "dpp:eSeals": [
+                {
+                    "seal_status": "CLOSED",
+                    "chip_id": "ESEALCHIP998877",
+                    "seal_id": "SEAL123456",
+                    "seal_date": "20240114103015"
+                }
+            ],
+            "dpp:doorStatus": "closed"
+        }
+    }
+}

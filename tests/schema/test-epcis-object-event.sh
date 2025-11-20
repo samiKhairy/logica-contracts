@@ -1,0 +1,1 @@
+npx ajv validate --spec=draft2020 --allowUnionTypes -s schemas/epcis-object-event.schema.json -d samples/epcis-object-event.json
