@@ -24,26 +24,26 @@ jobs:
         run: npx tsc --noEmit
 
       - name: Validate CTD Telemetry Schema
-        run: node_modules/.bin/ajv validate --spec=draft2020 \
+        run: npx ajv validate --spec=draft2020 \
               -s schemas/ctd-telemetry.schema.json \
               -d samples/ctd-telemetry.json
 
       - name: Validate CTD Alarm Schema
-        run: node_modules/.bin/ajv validate --spec=draft2020 \
+        run: npx ajv validate --spec=draft2020 \
               -s schemas/ctd-alarm.schema.json \
               -d samples/ctd-alarm.json
 
       - name: Validate CTD E-Seal Schema
-        run: node_modules/.bin/ajv validate --spec=draft2020 \
+        run: npx ajv validate --spec=draft2020 \
               -s schemas/ctd-eseal.schema.json \
               -d samples/ctd-eseal.json
 
       - name: Validate EPCIS ObjectEvent Schema
-        run: node_modules/.bin/ajv validate --spec=draft2020 --allowUnionTypes \
+        run: npx ajv validate --spec=draft2020 --allowUnionTypes \
               -s schemas/epcis-object-event.schema.json \
               -d samples/epcis-object-event.json
 
       - name: Validate DPP Model Schema
-        run: node_modules/.bin/ajv validate --spec=draft2020 --allowUnionTypes \
+        run: npx ajv validate --spec=draft2020 --allowUnionTypes \
               -s schemas/dpp-model.schema.json \
               -d samples/dpp.json
